@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -116,7 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. "$HOME/.cargo/env"
 export MANPATH=/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH
 export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
