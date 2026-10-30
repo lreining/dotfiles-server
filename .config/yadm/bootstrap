@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+mkdir -p ~/.local/bin
+
+command -v starship >/dev/null || \
+  curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y
+
+command -v zoxide >/dev/null || \
+  curl -sSf https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+[ -d ~/.fzf ] || {
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install --key-bindings --completion --no-update-rc --no-zsh --no-fish
+}
